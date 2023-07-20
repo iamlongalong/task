@@ -12,14 +12,14 @@ import (
 	"github.com/Masterminds/semver/v3"
 	"github.com/sajari/fuzzy"
 
-	compilerv2 "github.com/go-task/task/v3/internal/compiler/v2"
-	compilerv3 "github.com/go-task/task/v3/internal/compiler/v3"
-	"github.com/go-task/task/v3/internal/execext"
-	"github.com/go-task/task/v3/internal/filepathext"
-	"github.com/go-task/task/v3/internal/logger"
-	"github.com/go-task/task/v3/internal/output"
-	"github.com/go-task/task/v3/taskfile"
-	"github.com/go-task/task/v3/taskfile/read"
+	compilerv2 "github.com/iamlongalong/task/v3/internal/compiler/v2"
+	compilerv3 "github.com/iamlongalong/task/v3/internal/compiler/v3"
+	"github.com/iamlongalong/task/v3/internal/execext"
+	"github.com/iamlongalong/task/v3/internal/filepathext"
+	"github.com/iamlongalong/task/v3/internal/logger"
+	"github.com/iamlongalong/task/v3/internal/output"
+	"github.com/iamlongalong/task/v3/taskfile"
+	"github.com/iamlongalong/task/v3/taskfile/read"
 )
 
 func (e *Executor) Setup() error {
@@ -254,7 +254,7 @@ func (e *Executor) doVersionChecks() error {
 	}
 
 	if v.LessThan(taskfile.V3) {
-		e.Logger.Errf(logger.Yellow, "task: version 2 schemas are deprecated and will be removed in a future release\nSee https://github.com/go-task/task/issues/1197 for more details\n")
+		e.Logger.Errf(logger.Yellow, "task: version 2 schemas are deprecated and will be removed in a future release\nSee https://github.com/iamlongalong/task/issues/1197 for more details\n")
 	}
 
 	// consider as equal to the greater version if round

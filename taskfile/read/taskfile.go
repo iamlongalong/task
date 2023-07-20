@@ -8,11 +8,11 @@ import (
 
 	"gopkg.in/yaml.v3"
 
-	"github.com/go-task/task/v3/errors"
-	"github.com/go-task/task/v3/internal/filepathext"
-	"github.com/go-task/task/v3/internal/sysinfo"
-	"github.com/go-task/task/v3/internal/templater"
-	"github.com/go-task/task/v3/taskfile"
+	"github.com/iamlongalong/task/v3/errors"
+	"github.com/iamlongalong/task/v3/internal/filepathext"
+	"github.com/iamlongalong/task/v3/internal/sysinfo"
+	"github.com/iamlongalong/task/v3/internal/templater"
+	"github.com/iamlongalong/task/v3/taskfile"
 )
 
 var (

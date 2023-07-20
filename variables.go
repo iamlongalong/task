@@ -6,11 +6,11 @@ import (
 
 	"github.com/joho/godotenv"
 
-	"github.com/go-task/task/v3/internal/execext"
-	"github.com/go-task/task/v3/internal/filepathext"
-	"github.com/go-task/task/v3/internal/fingerprint"
-	"github.com/go-task/task/v3/internal/templater"
-	"github.com/go-task/task/v3/taskfile"
+	"github.com/iamlongalong/task/v3/internal/execext"
+	"github.com/iamlongalong/task/v3/internal/filepathext"
+	"github.com/iamlongalong/task/v3/internal/fingerprint"
+	"github.com/iamlongalong/task/v3/internal/templater"
+	"github.com/iamlongalong/task/v3/taskfile"
 )
 
 // CompiledTask returns a copy of a task, but replacing variables in almost all
@@ -103,8 +103,8 @@ func (e *Executor) compiledTask(call taskfile.Call, evaluateShVars bool) (*taskf
 	new.Env = &taskfile.Vars{}
 	new.Env.Merge(r.ReplaceVars(e.Taskfile.Env))
 	new.Env.Merge(r.ReplaceVars(dotenvEnvs))
-	new.Env.Merge(r.ReplaceVars(origTask.Env))
 	new.Env.Merge(r.ReplaceVars(call.Envs))
+	new.Env.Merge(r.ReplaceVars(origTask.Env))
 	if evaluateShVars {
 		err = new.Env.Range(func(k string, v taskfile.Var) error {
 			static, err := e.Compiler.HandleDynamicVar(v, new.Dir)

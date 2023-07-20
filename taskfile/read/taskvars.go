@@ -7,8 +7,8 @@ import (
 
 	"gopkg.in/yaml.v3"
 
-	"github.com/go-task/task/v3/internal/filepathext"
-	"github.com/go-task/task/v3/taskfile"
+	"github.com/iamlongalong/task/v3/internal/filepathext"
+	"github.com/iamlongalong/task/v3/taskfile"
 )
 
 // Taskvars reads a Taskvars for a given directory

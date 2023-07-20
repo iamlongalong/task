@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/go-task/task/v3/taskfile"
+	"github.com/iamlongalong/task/v3/taskfile"
 )
 
 func Get(t *taskfile.Task) []string {

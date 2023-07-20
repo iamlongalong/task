@@ -113,7 +113,7 @@ func changelog(version *semver.Version) error {
 
 	// Replace @user and #issue with full links
 	changelog = changelogUserRegex.ReplaceAllString(changelog, "[@$1](https://github.com/$1)")
-	changelog = changelogIssueRegex.ReplaceAllString(changelog, "[#$1](https://github.com/go-task/task/issues/$1)")
+	changelog = changelogIssueRegex.ReplaceAllString(changelog, "[#$1](https://github.com/iamlongalong/task/issues/$1)")
 
 	// Write the changelog to the target file
 	return os.WriteFile(changelogTarget, []byte(changelog), 0o644)

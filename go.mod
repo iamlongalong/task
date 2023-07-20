@@ -1,4 +1,4 @@
-module github.com/go-task/task/v3
+module github.com/iamlongalong/task/v3
 
 go 1.19
 

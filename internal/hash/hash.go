@@ -5,7 +5,7 @@ import (
 
 	"github.com/mitchellh/hashstructure/v2"
 
-	"github.com/go-task/task/v3/taskfile"
+	"github.com/iamlongalong/task/v3/taskfile"
 )
 
 type HashFunc func(*taskfile.Task) (string, error)

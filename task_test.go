@@ -15,10 +15,10 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/go-task/task/v3"
-	"github.com/go-task/task/v3/errors"
-	"github.com/go-task/task/v3/internal/filepathext"
-	"github.com/go-task/task/v3/taskfile"
+	"github.com/iamlongalong/task/v3"
+	"github.com/iamlongalong/task/v3/errors"
+	"github.com/iamlongalong/task/v3/internal/filepathext"
+	"github.com/iamlongalong/task/v3/taskfile"
 )
 
 func init() {
@@ -1488,7 +1488,7 @@ func TestDisplaysWarningOnVersion2Schema(t *testing.T) {
 	}
 	err := e.Setup()
 	require.NoError(t, err)
-	assert.Equal(t, "task: version 2 schemas are deprecated and will be removed in a future release\nSee https://github.com/go-task/task/issues/1197 for more details\n", buff.String())
+	assert.Equal(t, "task: version 2 schemas are deprecated and will be removed in a future release\nSee https://github.com/iamlongalong/task/issues/1197 for more details\n", buff.String())
 }
 
 func TestShortTaskNotation(t *testing.T) {

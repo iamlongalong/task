@@ -1,6 +1,6 @@
 package taskfile
 
-import "github.com/go-task/task/v3/internal/deepcopy"
+import "github.com/iamlongalong/task/v3/internal/deepcopy"
 
 // Requires represents a set of required variables necessary for a task to run
 type Requires struct {

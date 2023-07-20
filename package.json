@@ -9,12 +9,12 @@
   "goBinary": {
     "name": "task",
     "path": "./bin",
-    "url": "https://github.com/go-task/task/releases/download/v{{version}}/task_{{platform}}_{{arch}}{{archive_ext}}"
+    "url": "https://github.com/iamlongalong/task/releases/download/v{{version}}/task_{{platform}}_{{arch}}{{archive_ext}}"
   },
   "files": [],
   "repository": {
     "type": "git",
-    "url": "https://github.com/go-task/task.git"
+    "url": "https://github.com/iamlongalong/task.git"
   },
   "keywords": [
     "task",
@@ -25,7 +25,7 @@
   "author": "Andrey Nering",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/go-task/task/issues"
+    "url": "https://github.com/iamlongalong/task/issues"
   },
   "homepage": "https://taskfile.dev",
   "dependencies": {

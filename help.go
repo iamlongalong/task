@@ -12,11 +12,11 @@ import (
 
 	"golang.org/x/sync/errgroup"
 
-	"github.com/go-task/task/v3/internal/editors"
-	"github.com/go-task/task/v3/internal/fingerprint"
-	"github.com/go-task/task/v3/internal/logger"
-	"github.com/go-task/task/v3/internal/sort"
-	"github.com/go-task/task/v3/taskfile"
+	"github.com/iamlongalong/task/v3/internal/editors"
+	"github.com/iamlongalong/task/v3/internal/fingerprint"
+	"github.com/iamlongalong/task/v3/internal/logger"
+	"github.com/iamlongalong/task/v3/internal/sort"
+	"github.com/iamlongalong/task/v3/taskfile"
 )
 
 // ListOptions collects list-related options

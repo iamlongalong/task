@@ -5,7 +5,7 @@ import (
 
 	"gopkg.in/yaml.v3"
 
-	"github.com/go-task/task/v3/internal/orderedmap"
+	"github.com/iamlongalong/task/v3/internal/orderedmap"
 )
 
 // Vars is a string[string] variables map.

@@ -5,7 +5,7 @@ import (
 
 	"gopkg.in/yaml.v3"
 
-	"github.com/go-task/task/v3/internal/deepcopy"
+	"github.com/iamlongalong/task/v3/internal/deepcopy"
 )
 
 // Task represents a task

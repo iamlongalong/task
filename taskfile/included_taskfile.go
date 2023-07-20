@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"path/filepath"
 
-	"github.com/go-task/task/v3/internal/execext"
-	"github.com/go-task/task/v3/internal/filepathext"
+	"github.com/iamlongalong/task/v3/internal/execext"
+	"github.com/iamlongalong/task/v3/internal/filepathext"
 
 	"golang.org/x/exp/slices"
 	"gopkg.in/yaml.v3"

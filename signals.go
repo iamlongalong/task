@@ -5,7 +5,7 @@ import (
 	"os/signal"
 	"syscall"
 
-	"github.com/go-task/task/v3/internal/logger"
+	"github.com/iamlongalong/task/v3/internal/logger"
 )
 
 // NOTE(@andreynering): This function intercepts SIGINT and SIGTERM signals

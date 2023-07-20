@@ -12,14 +12,14 @@ import (
 	"github.com/spf13/pflag"
 	"mvdan.cc/sh/v3/syntax"
 
-	"github.com/go-task/task/v3"
-	"github.com/go-task/task/v3/args"
-	"github.com/go-task/task/v3/errors"
-	"github.com/go-task/task/v3/internal/experiments"
-	"github.com/go-task/task/v3/internal/logger"
-	"github.com/go-task/task/v3/internal/sort"
-	ver "github.com/go-task/task/v3/internal/version"
-	"github.com/go-task/task/v3/taskfile"
+	"github.com/iamlongalong/task/v3"
+	"github.com/iamlongalong/task/v3/args"
+	"github.com/iamlongalong/task/v3/errors"
+	"github.com/iamlongalong/task/v3/internal/experiments"
+	"github.com/iamlongalong/task/v3/internal/logger"
+	"github.com/iamlongalong/task/v3/internal/sort"
+	ver "github.com/iamlongalong/task/v3/internal/version"
+	"github.com/iamlongalong/task/v3/taskfile"
 )
 
 const usage = `Usage: task [flags...] [task...]
