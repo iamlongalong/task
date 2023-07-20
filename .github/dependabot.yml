@@ -12,13 +12,13 @@ updates:
       - "area: dependencies"
       - "lang: go"
 
-  - package-ecosystem: npm
-    directory: /
-    schedule:
-      interval: weekly
-      day: saturday
-      time: '08:00'
-      timezone: America/Sao_Paulo
-    labels:
-      - "area: dependencies"
-      - "lang: javascript"
+  # - package-ecosystem: npm
+  #   directory: /
+  #   schedule:
+  #     interval: weekly
+  #     day: saturday
+  #     time: '08:00'
+  #     timezone: America/Sao_Paulo
+  #   labels:
+  #     - "area: dependencies"
+  #     - "lang: javascript"
