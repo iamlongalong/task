@@ -3,11 +3,11 @@ slug: /usage/
 sidebar_position: 3
 ---
 
-# 使い方
+# Usage
 
-## はじめに
+## Getting started
 
-プロジェクトのルートに`Taskfile.yml`というファイルを作成します。 `cmds`属性にはタスクのコマンドを記載する必要があります。 以下の例はGoアプリをコンパイルするタスクと、[esbuild](https://esbuild.github.io/)を使って複数のCSSファイルを結合・小さくして1つのファイルにするタスクがあります。
+Create a file called `Taskfile.yml` in the root of your project. The `cmds` attribute should contain the commands of a task. The example below allows compiling a Go app and uses [esbuild](https://esbuild.github.io/) to concat and minify multiple CSS files into a single one.
 
 ```yaml
 version: '3'
@@ -22,17 +22,17 @@ tasks:
       - esbuild --bundle --minify css/index.css > public/bundle.css
 ```
 
-タスクは以下のように簡単に実行できます:
+Running the tasks is as simple as running:
 
 ```bash
 task assets build
 ```
 
-Taskは[mvdan.cc/sh](https://mvdan.cc/sh/)というネイティブなGo shインタプリタを使用しています。 So you can write sh/bash commands, and it will work even on Windows, where `sh` or `bash` are usually not available. Just remember any executable called must be available by the OS or in PATH.
+Task uses [mvdan.cc/sh](https://mvdan.cc/sh/), a native Go sh interpreter. So you can write sh/bash commands, and it will work even on Windows, where `sh` or `bash` are usually not available. Just remember any executable called must be available by the OS or in PATH.
 
 If you omit a task name, "default" will be assumed.
 
-## サポートされているファイル名
+## Supported file names
 
 Task will look for the following file names, in order of priority:
 

@@ -104,6 +104,7 @@ func (e *Executor) compiledTask(call taskfile.Call, evaluateShVars bool) (*taskf
 	new.Env.Merge(r.ReplaceVars(e.Taskfile.Env))
 	new.Env.Merge(r.ReplaceVars(dotenvEnvs))
 	new.Env.Merge(r.ReplaceVars(origTask.Env))
+	new.Env.Merge(r.ReplaceVars(call.Envs))
 	if evaluateShVars {
 		err = new.Env.Range(func(k string, v taskfile.Var) error {
 			static, err := e.Compiler.HandleDynamicVar(v, new.Dir)

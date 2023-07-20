@@ -301,7 +301,7 @@ func (e *Executor) runCommand(ctx context.Context, t *taskfile.Task, call taskfi
 		reacquire := e.releaseConcurrencyLimit()
 		defer reacquire()
 
-		err := e.RunTask(ctx, taskfile.Call{Task: cmd.Task, Vars: cmd.Vars, Silent: cmd.Silent})
+		err := e.RunTask(ctx, taskfile.Call{Task: cmd.Task, Envs: t.Env, Vars: cmd.Vars, Silent: cmd.Silent})
 		if err != nil {
 			return err
 		}
