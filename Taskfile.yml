@@ -116,17 +116,17 @@ tasks:
   test-release:
     desc: Tests release process without publishing
     cmds:
-      - goreleaser --snapshot --rm-dist
+      - goreleaser --snapshot --clean
 
   release:
     desc: Prepare the project for a new release
     cmds:
       - go run ./cmd/release {{.CLI_ARGS}}
 
-  npm:publish:
-    desc: Publish release to npm
-    cmds:
-      - npm publish --access=public
+  # npm:publish:
+  #   desc: Publish release to npm
+  #   cmds:
+  #     - npm publish --access=public
 
   packages:
     cmds:
