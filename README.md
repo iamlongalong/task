@@ -22,12 +22,12 @@
 
 相比于 ansible，这个项目最吸引我的点有两个： 
 
-- 依赖很少，一个 3MB 的二进制就能跑！
-- 基于 yaml 的配置，内容很简洁 (没有 ansible 封装的那种自定义的 schema 结构)
+- 🥒 依赖很少，一个 3MB 的二进制就能跑！
+- 🧼 基于 yaml 的配置，内容很简洁 (没有 ansible 封装的那种自定义的 schema 结构) 
 
 但在使用中也遇到了一些问题，主要还是在 环境变量的传递问题！！！
 
-作者在 Q&A 中也解释了不同 shell 间不能共享环境变量，这在同一层级的任务中其实很好理解。
+作者在 [Q&A](https://taskfile.dev/faq/) 中也解释了不同 shell 间不能共享环境变量，这在同一层级的任务中其实很好理解。
 
 但我的场景是，在一个 task 中通过调用另一个 task，写法如下：
 
@@ -51,22 +51,38 @@ tasks:
 
 按照原有逻辑，子 task 的环境变量继承顺序，因此修改后的环境变量继承逻辑为:
 
-taskfile envs => dotenv envs => parent task envs => task envs。
+`taskfile envs` => `dotenv envs` => `parent task envs` => `task envs`
+
+代码中的处理为这样：
+```golang
+// 创建的新的 task (子task)
+new.Env = &taskfile.Vars{}
+// taskfile 中定义的全局 env
+new.Env.Merge(r.ReplaceVars(e.Taskfile.Env))
+// 定义的 dotenv 文件中的 env
+new.Env.Merge(r.ReplaceVars(dotenvEnvs))
+// 调用方 task 的 env (父 task)
+new.Env.Merge(r.ReplaceVars(call.Envs))
+// 被调用的 task 的 env (子 task)
+new.Env.Merge(r.ReplaceVars(origTask.Env))
+
+```
 
 但是需要注意，我的改动仅实现了在一个 task 的 cmd 中调用了另一个 task 的情况，**不包含** 使用 dep 的方式。
+> 目前我使用 dep 的方式比较少，但从理解上看，dep 类似于需要前置跑一些其他的 task (类似调用其他进程)，就先不继承环境了。
 
 
 ## TODDO
 
 考虑到实际使用时的场景，后续决定再加一些功能：
 
-- 环境变量支持 default 语法，类似于 `MY_VAR=${MY_VAR:-"var_default"}` 这种，用于子 task 中定义默认的环境变量。 (类似于 vars: MY_VAR: sh: "xxx" 的模式)
-- required 环境变量，(类似于 required vars) 
+- [ ] 环境变量支持 default 语法，类似于 `MY_VAR=${MY_VAR:-"var_default"}` 这种，用于子 task 中定义默认的环境变量。 (类似于 vars: MY_VAR: sh: "xxx" 的模式)
+- [ ] required 环境变量，(类似于 required vars) 
 
-这些改动都是针对环境变量的，我认为一个脚本管理工具，最好是保持兼容性，环境变量 相对于 模板变量 而言，前者的兼容性就更好，大家理解起来也更加符合原来的 shell 语法。
+> 这些改动都是针对环境变量的，我认为一个脚本管理工具，最好是保持兼容性，环境变量 相对于 模板变量 而言，前者的兼容性就更好，大家理解起来也更加符合原来的 shell 语法。
 
 
-还在纠结要不要加的功能：
+😖😖😖 还在纠结要不要加的功能：
 
 - task 的包管理，能够实现依赖收集，类似于从一个 repo 中拉取所需要的脚本文件等
 
