@@ -14,6 +14,8 @@
   </p>
 </div>
 
+> 就在我 fork 了这个版本的 2 个月之后，原作者在一次大的变动中支持了我的这个功能，详见 [taskfile-version3](https://taskfile.dev/zh-Hans/taskfile-versions/#version-3-latest) . 所以，这个项目姑且先不用了，后面如果想加 变量默认值 的时候再看着搞搞
+
 ## 说明
 
 这个项目是从 [go-task/task](https://github.com/go-task/task) 中 fork 过来的。
